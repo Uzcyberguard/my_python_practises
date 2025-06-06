@@ -20,5 +20,5 @@ for n in list(b):
 
 
 sonn = int(''.join(str(x) for x in son))
-print(sonn)  # 245678
+print(sonn)  
        
