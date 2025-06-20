@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Jun 16 16:05:51 2025
+Created on Mon Jun 16 16:01:37 2025
 
 @author: User
 """
-
 
 """AMALIYOT
 1)Foydalanuvchi ismi va yoshini so'rab, uning tug'ilgan yilini hisoblaydigan funksiya yozing.
@@ -16,9 +15,8 @@ Created on Mon Jun 16 16:05:51 2025
 Yuqoridagi funksiyada y uchun 2 standart qiymatini bering.
 6)Foydalanuvchidan son qabul qilib, sonni 2 dan 10 gacha bo'lgan sonlarga qoldiqsiz bo'linishini tekshiruvchi funksiya yozing.
  Natijalarni konsolga chiqaring."""
-def juft_toqlik(x):
-    if x%2==0:
-        print(f"{x} juft son")
-    else:
-        print(f"{x} toq son")
-juft_toqlik(x=int(input("son kiriting , biz sizga juft toqligini aytadi.\n>>>")))        
+ 
+def f(x):
+    print(f" {x} ning kvadrati {x**2}, kubi esa {x**3}" )
+f(x=float(input("son kiriting >>> ")))    
+     
