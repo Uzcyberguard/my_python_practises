@@ -10,7 +10,7 @@ Created on Thu Jun 19 22:50:25 2025
 rules="This is interesting game based on number theory, in this game \
 computer memorises a munber(100;200) as a secret and you need to find this \
 number's factor for winning.\
-If your number is not factor of this number, computer decrease from secret your number.\
+If your number is not factor of this number, computer subtracts your number from secret.\
    \n   \n NOTE \n\n When SECRET REACHS TO NEGATIVE SCALE or YOU BREAK RULES THREE TIMES \
 in terms of WRITING 1 and WRITING ONE NUMBER TWICE as a factor."
 print("Welcome to Hasan's game") 
@@ -63,7 +63,7 @@ while yana==True:
     else:
                 yana=False
 print("\n If you are interested in my game , I am so glad.")        
-        
+# 2 ,3 4, 6, 16, 12.        
    
         
     
