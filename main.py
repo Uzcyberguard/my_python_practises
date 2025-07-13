@@ -171,14 +171,7 @@ if __name__ == '__main__':
     print("Bot ishga tushdi!")
     app.run_polling()
 # hasan_bot_main.py fayl oxirida
-import time
 
-while True:
-    try:
-        app.run_polling()
-    except Exception as e:
-        print("Xatolik:", e)
-    time.sleep(5)    
     
     
     
