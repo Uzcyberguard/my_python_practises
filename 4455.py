@@ -1,4 +1,3 @@
-
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, MessageHandler, filters, ContextTypes
 import random
@@ -176,7 +175,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # Botni ishga tushirish
 if __name__ == '__main__':
-    app = ApplicationBuilder().token("8165214358:AAE6Y-lINtF9c2_X5vAwRut8p8Kpd0d7bkU").build()
+    app = ApplicationBuilder().token("TOKEN").build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(button_handler))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text))

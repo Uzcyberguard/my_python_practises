@@ -10,7 +10,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [InlineKeyboardButton("📝 So'z topish", callback_data='soz')],
         [InlineKeyboardButton("🔢 Son topish", callback_data='son')],
-        [InlineKeyboardButton("🧮 Matematik o'yin", callback_data='math')]
+        [InlineKeyboardButton("➕ Matematik o'yin", callback_data='math')]
     ]
     markup = InlineKeyboardMarkup(keyboard)
     await update.message.reply_text("Xush kelibsiz Hasanning telegram botiga! 👋", reply_markup=markup)
@@ -28,24 +28,24 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_text("1dan 10 gacha son o'yladim, topishga urinib ko'ring:")
     elif query.data == "math":
         rules = (
-            "Bu o'yin sonlar asosida tuzilgan. Kompyuter 100–200 oralig‘ida sirli son o‘ylaydi."
-
-            "Siz shu sonning bo‘luvchisini topishingiz kerak."
-
-            "Agar topolmasangiz, siz tanlagan son sirli sondan ayriladi va sirli son kamayadi. Keyingi navbatda siz shu yangi sirli sonni bo'uvchisini topishingiz kerak!"
-
-            "⚠️ Qoidalar:"
-
-            "- 1 ni kiritish mumkin emas"
-
-            "- Takroriy son yuborish taqiqlanadi"
-
-            "- 3 ta qoidabuzarlikdan keyin o‘yin tugaydi"
-
+            "Bu o'yin sonlar asosida tuzilgan. Kompyuter 100–200 oralig‘ida sirli son o‘ylaydi.
+"
+            "Siz shu sonning bo‘luvchisini topishingiz kerak.
+"
+            "Agar topolmasangiz, siz tanlagan son sirli sondan ayriladi.
+"
+            "⚠️ Qoidalar:
+"
+            "- 1 ni kiritish mumkin emas
+"
+            "- Takroriy son yuborish taqiqlanadi
+"
+            "- 3 ta qoidabuzarlikdan keyin o‘yin tugaydi
+"
         )
-        await query.edit_message_text("Matematik o'yin boshlandi!"
+        await query.edit_message_text("Matematik o'yin boshlandi!
 
- + rules)
+" + rules)
         sir = random.randint(100, 200)
         user_data[user_id] = {"game": "math", "secret": sir, "original": sir, "violations": 0, "used": [1]}
 
@@ -59,28 +59,17 @@ async def start_soz(query):
              'zinalar', 'pol', 'stul', 'stol', 'karavot', 'supurgi', 'mashq', 'sport', 'futbol', 'basketbol',
              'voleybol', 'piyoda', 'yugurish', 'toqqa', 'suzish', 'baliqchi', 'baliq', 'ariq', 'suvlik',
              'shakar', 'guruch', 'un', 'laganda', 'qoshiqcha', 'likopcha', 'osh', 'oshpaz', 'mehmon',
-             'xonanda', 'chiroq', 'tok', 'kompyuter', 'sichqoncha', 'ekran', 'klaviatura', 'daftarlar',
+             'xonaqadam', 'chiroq', 'tok', 'kompyuter', 'sichqoncha', 'ekran', 'klaviatura', 'daftarlar',
              'doska', 'tayoq', 'parda', 'politsa', 'militsiya', 'askar', 'zobit', 'rahbar', 'ustoz',
              'hamkasb', 'kotib', 'qalamdon', 'sumka', 'sochiq', 'sovun', 'taroq', 'oynak', 'narsa', 'kiyim',
              'futbolka', 'shim', 'poyabzal', 'etik', 'botinka', 'paypoq', 'shlyapa', 'zanjir', 'uzuk',
              'taqinchoq', 'soatbop', 'yostiq', 'adyol', 'choynak', 'stakan', 'nonvoy', 'novvoy', 'rastaxona',
-             'uddalamoq', 'vaqt', 'vaqtinchalik', 'kechikish', 'tezlik', 'sekinlik', 'telefonlar', 'hamyon',
-             'avtoulov', 'moy', 'gaz', 'shisha', 'oyna', 'sochiqlar', 'tugma''Olim', 'Asilbek', 'Jahongir', 'Doston',
-             'Sardor', 'Shaxzod', 'Bobur', 'Ulug‘bek', 'Sherzod', 'Azizbek', 'Farrux', 'Islombek', 'Jasur', 'Oybek', 
-             'Zafar', 'Rustam', 'Behruz', 'Anvar', 'Shavkat', 'Kamoliddin', 'Umid', 'Shuhrat', 'Erkin', 'Habibulloh', 
-             'Muhammadali', 'Mirjalol', 'Sirojiddin', 'Doniyor', 'Dilshod', 'Saidbek', 'Lazizbek', 'Baxtiyor', 'Shohruh', 
-             'Zohidbek', 'Sarvar', 'Alisher', 'Komil', 'Ravshan', 'Murod', 'Abduvali', 'Shohjahon', 'Sherali', 'Tohir', 
-             'Alimardon', 'Salohiddin', 'Temur', 'Nodirbek', 'Ilhom', 'Muso', 'Rauf','oybek','hasan','husan','abbos''Gulnora',
-             'Dilnoza', 'Zilola', 'Malika', 'Sitora', 'Nodira', 'Shahzoda', 'Zarnigor', 'Rayhona', 'Feruza', 'Yulduz', 'Nigora',
-             'Lola', 'Asal', 'Mehribon', 'Gulbahor', 'Durdona', 'Mohira', 'Madinabonu', 'Muxlisa', 'Zuxra', 'Diyora', 'Shahlo', 
-             'Nasiba', 'Robiya', 'Ziyoda', 'Mushtariy', 'Rano', 'Ozoda', 'Shirin', 'Dilafruz', 'Shahrizoda', 'Madina', 'Kamola', 
-             'Nozima', 'Bibisora', 'Ruxshona', 'Guli', 'Saodat', 'Marhabo', 'Gulchehra', 'Nilufar', 'Sevara', 'Ozodaxon', 'Umida',
-             'Orzigul', 'nigina', 'Zebuniso', 'Gulruh', 'Tozagul','Fazila']
-
-
+             'eplaydi', 'vaqt', 'vaqtinchalik', 'kechikish', 'tezlik', 'sekinlik', 'telefonlar', 'hamyon',
+             'avtoulov', 'moy', 'gaz', 'shisha', 'oyna', 'sochiqlar', 'tugma']
     word = random.choice(words).upper()
     user_data[user_id] = {"game": "soz", "word": word, "display": ["_"] * len(word), "tries": []}
-    await query.edit_message_text(f"So'z topish boshlandi:{' '.join(user_data[user_id]['display'])}")
+    await query.edit_message_text(f"So'z topish boshlandi:
+{' '.join(user_data[user_id]['display'])}")
 
 # Matnli javoblarni qayta ishlash
 async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -103,7 +92,8 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 await update.message.reply_text(f"🎉 Tabriklaymiz! So'z: {data['word']}")
                 del user_data[user_id]
             else:
-                await update.message.reply_text(f"Bor!{' '.join(data['display'])}  Urinishlar: {''.join(data['tries'])}")
+                await update.message.reply_text(f"Bor!
+{' '.join(data['display'])}  Urinishlar: {''.join(data['tries'])}")
         else:
             await update.message.reply_text(f"Yo‘q. {' '.join(data['display'])}  Urinishlar: {''.join(data['tries'])}")
 
@@ -114,7 +104,8 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 return
             guess = int(msg)
             if guess == data["number"]:
-                await update.message.reply_text(f"Siz topdingiz! Men o‘ylagan son {guess} edi.Endi siz son o‘ylang va 'ok' deb yozing.")
+                await update.message.reply_text(f"Siz topdingiz! Men o‘ylagan son {guess} edi.
+Endi siz son o‘ylang va 'ok' deb yozing.")
                 data["step"] = 2
                 data["comp_range"] = list(range(1, 11))
                 data["comp_tries"] = 1
@@ -129,7 +120,8 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
             if not data.get("ready") and msg.lower() == "ok":
                 data["ready"] = True
                 data["guess"] = random.choice(data["comp_range"])
-                await update.message.reply_text(f"Siz o‘ylagan son {data['guess']} edi? T (to‘g‘ri), + (o'ylagan sonim bundan katta), - (o'ylagan sonim bundan kichik kichik)")
+                await update.message.reply_text(f"Siz o‘ylagan son {data['guess']} edi?
+T (to‘g‘ri), + (katta), - (kichik)")
             elif data.get("ready"):
                 javob = msg
                 if javob == "T":
@@ -143,7 +135,8 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 if data["comp_range"]:
                     data["guess"] = random.choice(data["comp_range"])
                     data["comp_tries"] += 1
-                    await update.message.reply_text(f"Balki siz {data['guess']} ni o‘ylagandirsiz? T, +, -")
+                    await update.message.reply_text(f"Balki siz {data['guess']} ni o‘ylagandirsiz?
+T, +, -")
                 else:
                     await update.message.reply_text("Xatolik! /start bilan qayta boshlang.")
                     del user_data[user_id]
@@ -156,7 +149,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if tanlov == 1 or tanlov in data["used"]:
             data["violations"] += 1
             if data["violations"] >= 3:
-                await update.message.reply_text(f"❌ Siz yutqazdingiz. Sirli son dastlab {data['original']} edi.")
+                await update.message.reply_text(f"❌ Siz yutqazdingiz. Sirli son: {data['original']}")
                 del user_data[user_id]
                 return
             else:
@@ -164,30 +157,21 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 return
         data["used"].append(tanlov)
         if data["secret"] % tanlov == 0:
-            await update.message.reply_text(f"✅ Tabriklaymiz! {tanlov} bo‘luvchi edi. Sirli son dastlab {data['original']} edi, u {data['secret']} bo'lganda siz {tanlov} ni yani uni bo'luvchisini topdingiz!")
+            await update.message.reply_text(f"✅ Tabriklaymiz! {tanlov} bo‘luvchi edi. Sirli son: {data['original']}")
             del user_data[user_id]
         else:
             data["secret"] -= tanlov
             if data["secret"] < 0:
-                await update.message.reply_text(f"💥 Siz yutqazdingiz. Sirli son manfiy bo‘ldi({data['original']}).Dastavval u {data['original']} edi!")
+                await update.message.reply_text(f"💥 Siz yutqazdingiz. Sirli son manfiy bo‘ldi. {data['original']}")
                 del user_data[user_id]
             else:
                 await update.message.reply_text("❌ Bo‘luvchi emas. Yana urinib ko‘ring.")
 
 # Botni ishga tushirish
 if __name__ == '__main__':
-    app = ApplicationBuilder().token("8165214358:AAE6Y-lINtF9c2_X5vAwRut8p8Kpd0d7bkU").build()
+    app = ApplicationBuilder().token("YOUR_BOT_TOKEN").build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(button_handler))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text))
     print("Bot ishga tushdi!")
     app.run_polling()
-
-
-    
-    
-    
-    
-    
-    
-    
